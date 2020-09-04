@@ -1,6 +1,9 @@
 # AML-CRNDE-Analysis
 Data analysis for LncRNA CRNDE in AML
 
+## Analysis of The Cancer Genome Atlas and beatAML RNA-seq data
+The available RNA-seq data of 151 AML patient samples, which included 16 APL and 155 non-APL AML patient samples, were downloaded from The Cancer Genome Atlas (TCGA) Data Portal. RNA-seq reads were aligned to GRCh38 whole genome with Ensembl v84 using Hisat2 2.0.4. StringTie 1.2.3 and Ballgown 1.0.1 were used to assemble the alignments into full and partial transcripts and estimate the expression levels of all lncRNAs. Limma algorithm [53] was used to analyze the differential expression of the lncRNAs. The utilization of patient data was performed in accordance with the TCGA Human Subjects Protection and Data Access Policies.
+
 ## workflow
 这里绘制流程图
 
