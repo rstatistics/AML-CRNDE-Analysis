@@ -22,8 +22,13 @@ lincRNA
 
 ## Align to the reference genome
 ```bash
-hisat2 -x hisat2_index/genome_snp_tran -1 TCGA-AB-2803-03A_R1.fq.gz -2 TCGA-AB-2803-03A_R2.fq.gz \
-       --fr --threads 10 --dta 2> TCGA-AB-2803-03A.summary.txt | /samtools view -F 4 - -b | \
-       samtools sort -o TCGA-AB-2803-03A.bam > TCGA-AB-2803-03A.stdout.log 2> TCGA-AB-2803-03A.stderr.log
+hisat2 -x hisat2_index/genome_snp_tran -1 Input_R1.fq.gz -2 Input_R2.fq.gz \
+       --fr --threads 10 --dta 2> Input.summary.txt | samtools view -F 4 - -b | \
+       samtools sort -o Input.bam > Input.stdout.log 2> Input.stderr.log
+
+samtools index Input.bam
+
+stringtie Input.bam -p 10 -G Homo_sapiens.GRCh38.84.gtf -eB -o Input.gtf
+
 ```
 
