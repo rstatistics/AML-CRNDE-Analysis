@@ -27,8 +27,17 @@ hisat2 -x hisat2_index/genome_snp_tran -1 Input_R1.fq.gz -2 Input_R2.fq.gz \
        samtools sort -o Input.bam > Input.stdout.log 2> Input.stderr.log
 
 samtools index Input.bam
-
+```
+## Transcriptome assembly
+```bash
 stringtie Input.bam -p 10 -G Homo_sapiens.GRCh38.84.gtf -eB -o Input.gtf
+```
 
+## Gene quantification
+```r
+library(ballgown)
+bg <- ballgown(dataDir="~/CRNDE/Analyze/", samplePattern="BA", meas='all')
+gene_expression = gexpr(bg)
+write.table(gene_expression,"AML_Expr.txt", row.names=TRUE, col.names=TRUE, quote=FALSE, sep="\t")
 ```
 
