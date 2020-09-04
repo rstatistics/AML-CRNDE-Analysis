@@ -42,3 +42,4 @@ write.table(gene_expression,"AML_Expr.txt", row.names=TRUE, col.names=TRUE, quot
 ```
 
 ## Differential Gene Expression
+Rscript AML-CRNDE-Analysis.R
