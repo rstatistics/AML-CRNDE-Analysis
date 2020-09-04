@@ -41,3 +41,4 @@ gene_expression = gexpr(bg)
 write.table(gene_expression,"AML_Expr.txt", row.names=TRUE, col.names=TRUE, quote=FALSE, sep="\t")
 ```
 
+## Differential Gene Expression
