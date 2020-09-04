@@ -5,8 +5,9 @@ Data analysis for LncRNA CRNDE in AML
 这里绘制流程图
 
 ## reference genome and hisat2-index
-The Human genome and annotation files were retrieved from [Genome](ftp://ftp.ensembl.org/pub/release-84/fasta/homo_sapiens/dna) and [GTF](ftp://ftp.ensembl.org/pub/release-84/gtf/homo_sapiens/Homo_sapiens.GRCh38.84.gtf.gz).
-The hisat2-index files were retrieved from [genome_snp_tran](https://cloud.biohpc.swmed.edu/index.php/s/grch38_snp_tran/download).
+The Human genome and annotation files were retrieved from [Genome](ftp://ftp.ensembl.org/pub/release-84/fasta/homo_sapiens/dna) 
+and [GTF](ftp://ftp.ensembl.org/pub/release-84/gtf/homo_sapiens/Homo_sapiens.GRCh38.84.gtf.gz).  
+The hisat2-index files were retrieved from [genome_snp_tran](https://cloud.biohpc.swmed.edu/index.php/s/grch38_snp_tran/download).  
 
 ## Interpretation biotype in Ensembl
 #### Defination of [LncRNA](https://m.ensembl.org/info/genome/genebuild/biotypes.html) in Ensembl GTF file:
