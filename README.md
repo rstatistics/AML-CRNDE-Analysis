@@ -39,13 +39,10 @@ write.table(gene_expression,"AML_Expr.txt", row.names=TRUE, col.names=TRUE, quot
 ```
 
 ### Differential Gene Expression
-```sh
-Rscript AML-CRNDE-Analysis.R
-```
+Genes with expression < 0.1 FPKM in less than 25% samples were removed from further analysis. Batch effects between two cohorts were removed with Combat from sva package. For more details, please see TCGA_BEAT-AML-RNAseq-Analysis.R. 
 
 ## Analysis of the microarray gene expression data
-The GSE12662 microarray expression data set was retrieved from the Gene Expression Omnibus (GEO) Database. 
-
+The GSE12662 microarray expression data set was retrieved from the Gene Expression Omnibus (GEO) Database. RMA was used to normalize the raw expression data. The biotype of lncRNAs were annotated based on "EnsDb.Hsapiens.v79" package. Limma was used to discover the differentially expressed lncRNAs between groups. For more details, please see Microarray-Analysis.R.
 
 ### Session Information
 ```
