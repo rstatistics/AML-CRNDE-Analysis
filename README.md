@@ -6,7 +6,7 @@ Pipeline code is publicly accessible on GitHub at [https://github.com/rstatistic
 ## Analysis of The Cancer Genome Atlas and beatAML RNA-seq data
 The available RNA-seq data of 171 AML patient samples, which included 16 APL and 155 non-APL AML patient samples, were downloaded from The Cancer Genome Atlas ([TCGA](https://tcga-data.nci.nih.gov/tcga/)) Data Portal. RNA-seq reads were aligned to [GRCh38 whole genome](http://asia.ensembl.org/Homo_sapiens/Info/Index) with Ensembl v84 using [Hisat2 2.2.0](https://cloud.biohpc.swmed.edu/index.php/s/hisat2-220-Linux_x86_64/download), [StringTie 2.1.2](http://ccb.jhu.edu/software/stringtie/dl/stringtie-2.1.2.Linux_x86_64.tar.gz) and [Ballgown 2.18.0](https://bioconductor.org/packages/release/bioc/html/ballgown.html) were used to assemble the alignments into full and partial transcripts and estimate the expression levels of all lncRNAs. [Limma](https://bioconductor.org/packages/release/bioc/html/limma.html) algorithm was used to analyze the differential expression of the lncRNAs. The utilization of patient data was performed in accordance with the TCGA Human Subjects Protection and Data Access Policies.
 
-## Interpretation biotype in Ensembl
+### Interpretation biotype in Ensembl
 #### Defination of [LncRNA](https://m.ensembl.org/info/genome/genebuild/biotypes.html) in Ensembl GTF file:
 Processed transcript  
 3' overlapping ncRNA  
@@ -17,7 +17,7 @@ Sense intronic
 Sense overlapping  
 lincRNA  
 
-## Align to the reference genome
+### Align to the reference genome
 ```bash
 hisat2 -x hisat2_index/genome_snp_tran -1 Input_R1.fq.gz -2 Input_R2.fq.gz \
        --fr --threads 10 --dta 2> Input.summary.txt | samtools view -F 4 - -b | \
@@ -25,12 +25,12 @@ hisat2 -x hisat2_index/genome_snp_tran -1 Input_R1.fq.gz -2 Input_R2.fq.gz \
 
 samtools index Input.bam
 ```
-## Transcriptome assembly
+### Transcriptome assembly
 ```bash
 stringtie Input.bam -p 10 -G Homo_sapiens.GRCh38.84.gtf -eB -o Input.gtf
 ```
 
-## Gene quantification
+### Gene quantification
 ```r
 library(ballgown)
 bg <- ballgown(dataDir="~/CRNDE/Analyze/", samplePattern="BA", meas='all')
@@ -38,12 +38,12 @@ gene_expression = gexpr(bg)
 write.table(gene_expression,"AML_Expr.txt", row.names=TRUE, col.names=TRUE, quote=FALSE, sep="\t")
 ```
 
-## Differential Gene Expression
+### Differential Gene Expression
 ```sh
 Rscript AML-CRNDE-Analysis.R
 ```
 
-## Session Information
+### Session Information
 ```
 R version 3.6.3 (2020-02-29)
 Platform: x86_64-pc-linux-gnu (64-bit)
