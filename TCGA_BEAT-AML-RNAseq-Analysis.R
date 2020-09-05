@@ -1,5 +1,4 @@
-# Joint-RNAseq-Analysis
-
+# TCGA_BEAT-AML-RNAseq-analysis
 library(limma)
 library(sva)
 setwd("~/CRNDE/Analyze")
