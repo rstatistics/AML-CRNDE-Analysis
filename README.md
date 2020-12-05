@@ -92,3 +92,5 @@ loaded via a namespace (and not attached):
 [69] xfun_0.16              xtable_1.8-4           survival_3.2-3         tibble_3.0.3          
 [73] AnnotationDbi_1.48.0   memoise_1.1.0          cluster_2.1.0          ellipsis_0.3.1        
 ```
+### Citation 
+Xuefei Ma, Wei Zhang, Ming Zhao, Shufen Li, Wen Jin & Kankan Wang. Oncogenic role of lncRNA CRNDE in acute promyelocytic leukemia and NPM1-mutant acute myeloid leukemia. Cell Death Discov. 6, 121 (2020). https://doi.org/10.1038/s41420-020-00359-y
